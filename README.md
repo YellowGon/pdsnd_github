@@ -1,14 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+25 November 2019
 
 ### Project Title
-Replace the Project Title
+3 City Bikeshare Analysis
 
 ### Description
-Describe what your project is about and what it does
+This project takes raw bikeshare trip data from 3 different U.S. cities and calculates various usage statistics based on user input
 
 ### Files used
-Include the files used
+bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
