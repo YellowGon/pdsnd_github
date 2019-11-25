@@ -5,7 +5,7 @@
 3 City Bikeshare Analysis
 
 ### Description
-This project takes raw bikeshare trip data from 3 different U.S. cities and calculates various usage statistics based on user input
+This project takes raw bikeshare trip data from 3 different U.S. cities and calculates various usage statistics based on user input. Statistics include average trip duration, most popular start and end stations, and most popular weekday of travel. 
 
 ### Files used
 bikeshare.py. This python file includes imports for time, pandas and numpy libraries
