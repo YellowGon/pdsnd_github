@@ -33,7 +33,9 @@ def get_filters():
     # Confirmation for user of the city they have selected:
     print('\nGreat, lets see some stats for ' + city.title() + '...\n')
 
-    # Get user input for month: 
+    # Get user input for month
+    # begin by asking user if they want to filter by month
+    # only ask for a specific month is answer is 'yes': 
     month_filter_status = input('Would you like to show data for a specific month (yes/no)?\n')
     while month_filter_status not in ('Yes','yes','No','no'):
         month_filter_status = input('Please enter "Yes" or "No":\n')
