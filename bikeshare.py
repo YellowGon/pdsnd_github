@@ -102,7 +102,6 @@ def load_data(city, month, day):
     # convert the End Time column to datetime
     df['End Time'] = pd.to_datetime(df['End Time'])
 
-
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
@@ -144,12 +143,10 @@ def time_stats(df,month,day):
         popular_month  = months[popular_month_int-1]
         print('The Most Popular Start Month is: ', popular_month)
 
-
     # Display the most common day of week (only show this stat if df not filtered by day)
     if day in ('All','all'):
         popular_day = df['day_of_week'].mode()[0]
         print('The most Popular Start Day is: ', popular_day)
-
 
     # Display the most common start hour
     df['Start_Hour'] = df['Start Time'].dt.hour
@@ -219,8 +216,6 @@ def user_stats(df):
         print(str(df['Gender'].value_counts()))
     except:
         print('Sorry, no gender data for this city')
-    
-
 
     # Display earliest, most recent, and most common year of birth (with error handling as per gender)
     try:
@@ -229,7 +224,6 @@ def user_stats(df):
         print('The most common birth year.... '+ str(int(df['Birth Year'].mode()[0])))
     except:
         print('Sorry, no birth year data for this city')
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
