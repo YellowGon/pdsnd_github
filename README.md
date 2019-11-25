@@ -8,7 +8,7 @@
 This project takes raw bikeshare trip data from 3 different U.S. cities and calculates various usage statistics based on user input
 
 ### Files used
-bikeshare.py
+bikeshare.py. This python file includes imports for time, pandas and numpy libraries
 
 The project raw data is stored in 3 csv files:
 washington.csv, new_york_city.csv and chicago.csv.
