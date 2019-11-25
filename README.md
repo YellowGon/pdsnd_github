@@ -15,5 +15,4 @@ washington.csv, new_york_city.csv and chicago.csv.
 These files are each about 35mb in size and so have not been included in this github repository.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Inspired by visual analysis of similar bikeshare data on https://towardsdatascience.com/exploring-tableau-with-capital-bikeshare-and-weather-data-7da84f0ecee2
