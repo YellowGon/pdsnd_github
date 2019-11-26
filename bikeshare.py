@@ -16,7 +16,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
 
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello! Let\'s explore some US bikeshare data! \nLet\'s start with some filtering questions:')
 
     # Get user input for city: 
     city  = input('Please enter the name of a city (Chicago, New York City or Washington):\n').lower()
@@ -104,7 +104,6 @@ def load_data(city, month, day):
     # convert the End Time column to datetime
     df['End Time'] = pd.to_datetime(df['End Time'])
 
-
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
@@ -146,12 +145,10 @@ def time_stats(df,month,day):
         popular_month  = months[popular_month_int-1]
         print('The Most Popular Start Month is: ', popular_month)
 
-
     # Display the most common day of week (only show this stat if df not filtered by day)
     if day in ('All','all'):
         popular_day = df['day_of_week'].mode()[0]
         print('The most Popular Start Day is: ', popular_day)
-
 
     # Display the most common start hour
     df['Start_Hour'] = df['Start Time'].dt.hour
@@ -169,18 +166,18 @@ def station_stats(df):
     start_time = time.time()
 
     # Display most commonly used start station
-    ss = df['Start Station'].mode()[0]
-    print('The most commonly used start station is:'+ '\n' + ss)
+    start_station = df['Start Station'].mode()[0]
+    print('The most commonly used start station is:'+ '\n' + start_station)
     
     # Display most commonly used end station
-    es = df['End Station'].mode()[0]
-    print('\nThe most commonly used end station is:' + '\n' + es)
+    end_station = df['End Station'].mode()[0]
+    print('\nThe most commonly used end station is:' + '\n' + end_station)
 
     # Display most frequent combination of start station and end station trip
     # Create a column that joins stat station to end station for each row first
     df['Combination'] = df['Start Station'] + ' ----> '+ df['End Station']
-    cs = df['Combination'].mode()[0]
-    print('\nThe most common trip (Start Station to End Station) is:' + '\n' + cs)
+    combo_stations = df['Combination'].mode()[0]
+    print('\nThe most common trip (Start Station to End Station) is:' + '\n' + combo_stations)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -221,8 +218,6 @@ def user_stats(df):
         print(str(df['Gender'].value_counts()))
     except:
         print('Sorry, no gender data for this city')
-    
-
 
     # Display earliest, most recent, and most common year of birth (with error handling as per gender)
     try:
@@ -231,7 +226,6 @@ def user_stats(df):
         print('The most common birth year.... '+ str(int(df['Birth Year'].mode()[0])))
     except:
         print('Sorry, no birth year data for this city')
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
